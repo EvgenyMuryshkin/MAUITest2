@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiTest2.RefreshViewFill">
+
+    <!-- RefreshView does not expand when HorizontalOptions set to FillAndExpand, without RefreshView scroll takes whole width -->
+    <!-- Need to have BoxView to force Refreshview to expand -->
+    <RefreshView IsRefreshing="{Binding IsBusy}" Command="{Binding RefreshCommand}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <ScrollView BackgroundColor="Yellow">
+            <VerticalStackLayout Spacing="2" HorizontalOptions="FillAndExpand">
+                <Label Text="Account" FontAttributes="Bold"/>
+                <Picker ItemsSource="{Binding Accounts}" SelectedItem="{Binding SelectedAccount}" HorizontalOptions="FillAndExpand"/>
+
+                <!-- Need to have BoxView to force Refreshview to expand -->
+                <!-- <BoxView HeightRequest="0" BackgroundColor="Transparent"/> -->
+                <Label Text="Environment" FontAttributes="Bold"/>
+                <Picker ItemsSource="{Binding Environments}" SelectedItem="{Binding SelectedEnvironment}" HorizontalOptions="FillAndExpand"/>
+            </VerticalStackLayout>
+        </ScrollView>
+    </RefreshView>
+</ContentPage>

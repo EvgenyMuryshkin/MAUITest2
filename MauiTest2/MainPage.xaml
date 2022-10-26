@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiTest2.MainPage">
+    <VerticalStackLayout Spacing="5">
+        <Label Text="Missing resources - crash, occasional debugger detachment"/>
+        <Button Text="CrashOnResource" Clicked="CrashOnResource_Clicked"/>
+        <Label Text="ListView vs CollectionView item template. One need CellView, another does not, exception is not informative, maybe all templated controlls need to check both cases and adjust internally to required template structure"/>
+        <Button Text="NoCellView" Clicked="NoCellView_Clicked"/>
+        <Button Text="ExtraCellView" Clicked="ExtraCellView_Clicked"/>
+        <Label Text="RefreshView does not fill width"/>
+        <Button Text="RefreshView" Clicked="RefreshView_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>

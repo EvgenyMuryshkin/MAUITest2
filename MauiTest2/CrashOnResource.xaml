@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiTest2.CrashOnResource">
+    <!-- When run this without debugger - app crashes -->
+    <!-- When run with debugger - target invocation is thrown, no info, sometimes debugger just disconnects, need to restart VS  -->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button" x:Name="RedButton">
+                <Setter Property="BackgroundColor" Value="Red"/>
+            </Style>
+            <Style TargetType="Button" x:Name="GreenButton">
+                <Setter Property="BackgroundColor" Value="Green"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Button
+                Style="{StaticResource Button1}"
+                Text="Button"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
